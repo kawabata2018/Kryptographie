@@ -1,3 +1,9 @@
+# sec2.9: 拡張されたユークリッドのアルゴリズム (p19)
+# 2つの自然数(a, b)の最大公約数gcd(a,b)を計算する。
+#
+# gcd(a,b) = x * a + y * b
+# を満足する整数の組(x, y)も算出する。
+
 import sys
 import numpy as np
 
@@ -11,6 +17,7 @@ def xeuclid(a, b):
     a must be larger than b
     i.e. a > b > 0
     """
+
     print()
     print("----------")
     print("Extended Euclidean Algorithm")
@@ -54,8 +61,11 @@ def input_value(count):
     num = input("[" + count + "] Enter an natural number: ")
     try:
         num = int(num)
+        if num <= 0:
+            print("Please enter a positive value\n")
+            return input_value(count)
     except:
-        print("Please input an natural number\n")
+        print("Please enter an integer\n")
         return input_value(count)
     else:
         return num
